@@ -32,4 +32,12 @@ class ProductService {
                 new GetProductResponse(product.getId(), product.getName(), product.getPrice(), product.getDisCountPolicy());
         return ResponseEntity.ok(response);
     }
+
+    public void updateProduct(Long productId, final UpdateProductRequest request) {
+        final Product product = productPort.getProduct(productId);
+
+        product.update(request.name(),request.price(),request.disCountPolicy());
+
+        productPort.save(product);
+    }
 }

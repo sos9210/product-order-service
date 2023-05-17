@@ -25,13 +25,10 @@ public class ProductApiTest extends ApiTest {
         ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
         Long productId = 1L;
 
-        final ExtractableResponse<Response> response = RestAssured.given().log().all()
-                .when()
-                .get("/products/{productId}", productId)
-                .then().log().all()
-                .extract();
+        final var response = ProductSteps.상품조회요청(productId);
 
         Assertions.assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
         Assertions.assertThat(response.jsonPath().getString("name")).isEqualTo("상품명입니다");
     }
+
 }
