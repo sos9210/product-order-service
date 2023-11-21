@@ -1,5 +1,5 @@
 package com.example.productorderservice.product;
 
-enum DisCountPolicy {
+public enum DisCountPolicy {
     NONE;
 }
