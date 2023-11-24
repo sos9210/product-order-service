@@ -10,7 +10,7 @@ class PaymentAdapter implements PaymentPort {
     private final PaymentGateway paymentGateway;
     private final PaymentRepository paymentRepository;
 
-    PaymentAdapter(PaymentGateway paymentGateway, PaymentRepository paymentRepository) {
+    public PaymentAdapter(PaymentGateway paymentGateway, PaymentRepository paymentRepository) {
         this.paymentGateway = paymentGateway;
         this.paymentRepository = paymentRepository;
     }
